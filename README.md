@@ -4,7 +4,7 @@ The Trovares Desktop is part of the Trovares Graph application.
 
 ## What is Trovares Desktop?
 
-The Trovares Desktop is a web application or driving property graph workloads in the Trovares xGT server.
+The Trovares Desktop is a web application for driving property graph workloads in the Trovares xGT server.
 
 ## How to use this image
 
