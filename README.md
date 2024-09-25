@@ -1,22 +1,28 @@
-# desktop
+# Trovares Desktop
+
 The Trovares Desktop is part of the Trovares Graph application.
 
+The Desktop is a web application for driving property graph workloads in the
+[Trovares xGT server](https://docs.trovares.com).
 
-## What is Trovares Desktop?
 
-The Trovares Desktop is a web application for driving property graph workloads in the Trovares xGT server.
+# Installation
 
-## How to use this image
+Perform these steps to install the Trovares graph application on a server.
 
-You can start a Trovares Application container with a command similar to this:
-```
+  - Copy the `docker-compose.yml` file from this repo to your server or laptop.
+  - Pull copies of docker containers to your environment:
+
+```bash
 docker compose pull
+```
+
+  - You can start a Trovares Application, which includes both the Desktop and the Trovares graph server,  with this command:
+```bash
 docker compose up -d
 ```
 
-Provided you have a `docker-compose.yml` file in your current directory and have a running docker.
-
-You can then aim a browser to `localhost:80` on the system running this docker application.
+  - You can then aim a browser to `localhost:80` on the system running this docker application.
 
 ## License
 
