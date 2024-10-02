@@ -26,8 +26,10 @@ services:
     volumes:
       - ${XGT_SSL_SERVER_CERT:-/dev/null}:/etc/ssl/certs/xgt-server.pem:ro
       - mongodb-data:/app/data
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+    # Uncomment these lines if using Docker Engine and running Trovares Desktop
+    # on the same host as the xGT server.
+    #extra_hosts:
+    #  - "host.docker.internal:host-gateway"
 
   xgt:
     image: trovares/xgt
@@ -53,4 +55,3 @@ networks:
   database-network:
     internal: true
   external-network:
-
