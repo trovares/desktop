@@ -126,4 +126,4 @@ Otherwise, the ldd command will list the dependencies that will look something l
 Notice, the missing library.
 In this case we didn't put all the libraries the driver needed in the odbc directory.
 
-For further details and support, you can always refer back to the main [README file](./README.md) or contact support@trovares.com
+For further details and support, you can always refer back to the main [README file](../README.md) or contact support@trovares.com
