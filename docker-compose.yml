@@ -42,7 +42,7 @@ services:
       - external-network
 
   mongodb:
-    image: mongo:latest
+    image: ${MONGODB_IMAGE:-mongo:latest}
     restart: always
     networks:
       - database-network

@@ -11,6 +11,7 @@ Trovares Desktop is a web application for driving property graph workloads in th
 ## Quick Installation
 
 Perform these steps to install and run Trovares Desktop and Trovares xGT on a server.
+If you are running on a ppc64le platform (IBM Power Series), see instructions below.
 
  1. Make sure Docker is running.  You may need to start (or install) a [Docker Desktop](https://docs.docker.com/desktop/) or [Docker Engine](https://docs.docker.com/engine/).  To verify that Docker is working, run the following command.  You should see information about the Docker environment.
     ```bash
@@ -30,6 +31,16 @@ Perform these steps to install and run Trovares Desktop and Trovares xGT on a se
     ```
 
  1. Aim a browser to `localhost` on the system running this Docker application and log in to the dekstop.
+
+## Quick Installation on IBM Power Series
+
+Before embarking on the Quick Installation above or the detailed installation
+below, create a `.env` file in the directory where you will create the `docker-compose.yml` file.
+This `.env` file should contain:
+
+```bash
+export MONGODB_IMAGE=ibmcom/mongodb-ppc64le
+```
 
 ## Installation
 
