@@ -11,7 +11,6 @@ Trovares Desktop is a web application for driving property graph workloads in th
 ## Quick Installation
 
 Perform these steps to install and run Trovares Desktop and Trovares xGT on a server.
-If you are running on a ppc64le platform (IBM Power Series), see instructions below.
 
  1. Make sure Docker is running.  You may need to start (or install) a [Docker Desktop](https://docs.docker.com/desktop/) or [Docker Engine](https://docs.docker.com/engine/).  To verify that Docker is working, run the following command.  You should see information about the Docker environment.
     ```bash
@@ -20,9 +19,10 @@ If you are running on a ppc64le platform (IBM Power Series), see instructions be
 
  1. Copy the `docker-compose.yml` file from this repo to your server or laptop.
 
- 1. Pull copies of the needed Docker containers:
+ 1. If installing on IBM Power Series, create a `.env` file in the same directory as the `docker-compose.yml` file containing this line:
+
     ```bash
-    docker compose pull
+    export TD_MONGODB_IMAGE=ibmcom/mongodb-ppc64le
     ```
 
  1. Start Trovares Desktop and Trovares xGT:
@@ -31,16 +31,6 @@ If you are running on a ppc64le platform (IBM Power Series), see instructions be
     ```
 
  1. Aim a browser to `localhost` on the system running this Docker application and log in to the dekstop.
-
-## Quick Installation on IBM Power Series
-
-Before embarking on the Quick Installation above or the detailed installation
-below, create a `.env` file in the directory where you will create the `docker-compose.yml` file.
-This `.env` file should contain:
-
-```bash
-export MONGODB_IMAGE=ibmcom/mongodb-ppc64le
-```
 
 ## Installation
 
@@ -149,6 +139,7 @@ The configurable environment variables are:
 |TD_MONGO_URI        | |location of the database used by the desktop|
 |TD_DEFAULT_XGT_HOST | |default login host for the desktop|
 |TD_DEFAULT_XGT_PORT | |default login port for the desktop|
+|TD_MONGODB_IMAGE    | |used to specify the mongodb image for Power10 installs|
 |XGT_SSL_SERVER_CERT |Y|path to chain file on host for the xGT server’s certificate|
 |XGT_SERVER_CN       | |common name on the xGT server’s certificate|
 |XGT_DATA_PATH       |Y|path to the data directory on host for the xGT server|
@@ -214,6 +205,11 @@ The variables that are volume mapped map point to a file or directory on the hos
  1. (Optional) Select the xGT server authentication types available to desktop users using the environment variable XGT_AUTH_TYPES.  The supported types are 'BasicAuth', which uses a username and password, and 'PKIAuth'.  The default is to support both types.  The value of XGT_AUTH_TYPES must be a string representing a JSON list of the selected types.  This example allows only username / password authentication:
     ```dotenv
     XGT_AUTH_TYPES="['BasicAuth']"
+    ```
+
+ 1. If upgrading, pull the latest versions of the Docker containers:
+    ```bash
+    docker compose pull
     ```
 
  1. Start Trovares Desktop:
