@@ -139,6 +139,7 @@ The configurable environment variables are:
 |TD_MONGO_URI        | |location of the database used by the desktop|
 |TD_DEFAULT_XGT_HOST | |default login host for the desktop|
 |TD_DEFAULT_XGT_PORT | |default login port for the desktop|
+|TD_ODBC_PATH        | |path to ODBC drivers for the connector|
 |TD_MONGODB_IMAGE    | |used to specify the mongodb image for Power10 installs|
 |XGT_SSL_SERVER_CERT |Y|path to chain file on host for the xGT server’s certificate|
 |XGT_SERVER_CN       | |common name on the xGT server’s certificate|
