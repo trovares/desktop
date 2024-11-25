@@ -231,6 +231,13 @@ The supported databases are:
  - Snowflake
  - Generic ODBC: Databricks, DB2, MySQL, and MariaDB
 
+## Connect to a site-local LLM
+
+There are many reasons users may prefer to use their own LLM.
+The Trovares desktop can call out to a site-local LLM with a modest amount of configuration and Python scripting.
+
+Refer to these detailed [instructions](doc/Site-Local-LLM.md).
+
 ## License
 
 By downloading, installing or using any of these images you agree to the [license agreement](https://docs.trovares.com/EULA/xGT_License_for_Containers.pdf) for this software.
