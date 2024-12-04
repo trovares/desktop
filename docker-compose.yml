@@ -11,6 +11,7 @@ services:
     volumes:
       - ${TD_SSL_PUBLIC_CERT:-/dev/null}:/etc/ssl/certs/td.pem:ro
       - ${TD_SSL_PRIVATE_KEY:-/dev/null}:/etc/ssl/private/td.pem:ro
+      - ${TD_SSL_CERT_CHAIN:-/dev/null}:/etc/ssl/certs/ca-chain.pem:ro
 
   backend:
     image: trovares/desktop_backend
@@ -21,6 +22,8 @@ services:
       TD_SESSION_TTL:
       TD_SSL_PUBLIC_CERT:
       TD_SSL_PRIVATE_KEY:
+      TD_SSL_PROXY_PUBLIC_CERT:
+      TD_SSL_PROXY_PRIVATE_KEY:
       XGT_SERVER_CN:
       XGT_AUTH_TYPES:
     networks:
@@ -28,6 +31,8 @@ services:
       - external-network
     volumes:
       - ${XGT_SSL_SERVER_CERT:-/dev/null}:/etc/ssl/certs/xgt-server.pem:ro
+      - ${TD_SSL_PROXY_PUBLIC_CERT:-/dev/null}:/etc/ssl/certs/proxy-client-cert.pem:ro
+      - ${TD_SSL_PROXY_PRIVATE_KEY:-/dev/null}:/etc/ssl/private/proxy-client-key.pem:ro
       - mongodb-data:/app/data
       - ${TD_ODBC_PATH:-/dev/null}:/odbc
 

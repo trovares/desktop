@@ -130,21 +130,24 @@ TD_SSL_PRIVATE_KEY=/directory/to/ssl/td-private-key.pem
 
 The configurable environment variables are:
 
-|Variable            |Volume Mapped|Description|
-|--------------------|-|-----------|
-|TD_PORT             | |alternative port for the http web server|
-|TD_SSL_PORT         | |alternative port for the https web server|
-|TD_SSL_PUBLIC_CERT  |Y|path to certificate on host to setup an https web server|
-|TD_SSL_PRIVATE_KEY  |Y|path to private key on host to setup an https web server|
-|TD_MONGO_URI        | |location of the database used by the desktop|
-|TD_DEFAULT_XGT_HOST | |default login host for the desktop|
-|TD_DEFAULT_XGT_PORT | |default login port for the desktop|
-|TD_ODBC_PATH        | |path to ODBC drivers for the connector|
-|TD_MONGODB_IMAGE    | |used to specify the mongodb image for Power10 installs|
-|XGT_SSL_SERVER_CERT |Y|path to chain file on host for the xGT server’s certificate|
-|XGT_SERVER_CN       | |common name on the xGT server’s certificate|
-|XGT_DATA_PATH       |Y|path to the data directory on host for the xGT server|
-|XGT_AUTH_TYPES      | |sets xGT server authentication types available in desktop|
+|Variable                |Volume Mapped|Description|
+|------------------------|-|-----------|
+|TD_PORT                 | |alternative port for the http web server|
+|TD_SSL_PORT             | |alternative port for the https web server|
+|TD_SSL_PUBLIC_CERT      |Y|path to certificate on host to setup an https web server|
+|TD_SSL_PRIVATE_KEY      |Y|path to private key on host to setup an https web server|
+|TD_SSL_CERT_CHAIN       |Y|path to certificate chain used by the https web server to validate client certificates for mTLS|
+|TD_SSL_PROXY_PUBLIC_CERT|Y|path to certificate on host to use as a proxy connection to the xGT server|
+|TD_SSL_PROXY_PRIVATE_KEY|Y|path to private key on host to use as a proxy connection to the xGT server|
+|TD_MONGO_URI            | |location of the database used by the desktop|
+|TD_DEFAULT_XGT_HOST     | |default login host for the desktop|
+|TD_DEFAULT_XGT_PORT     | |default login port for the desktop|
+|TD_ODBC_PATH            | |path to ODBC drivers for the connector|
+|TD_MONGODB_IMAGE        | |used to specify the mongodb image for Power10 installs|
+|XGT_SSL_SERVER_CERT     |Y|path to chain file on host for the xGT server’s certificate|
+|XGT_SERVER_CN           | |common name on the xGT server’s certificate|
+|XGT_DATA_PATH           |Y|path to the data directory on host for the xGT server|
+|XGT_AUTH_TYPES          | |sets xGT server authentication types available in desktop|
 
 The variables that are volume mapped map point to a file or directory on the host that gets mapped to an expected location in the containers.
 
